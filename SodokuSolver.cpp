@@ -50,7 +50,7 @@ public:
 		return Setup();
 	}
 	
-	bool CheckBoard(int y, int x, char c, vector<vector<char>>& board)
+	bool CheckBoard(int y, int x, char c, vector<vector<char> >& board)
 	{
 		//Check Row
 		for(int i=0; i<9; i++)
@@ -109,7 +109,7 @@ public:
 		}
 	}
 	
-	void Restore(int y, int x, char c, vector<vector<char>>& board)
+	void Restore(int y, int x, char c, vector<vector<char> >& board)
 	{
 		int n = (int)c-49;
 		available[y][x][n] = true;
@@ -143,7 +143,7 @@ public:
 	}
 
 	
-	void ShowAvailable(vector<vector<char>>& board)
+	void ShowAvailable(vector<vector<char> >& board)
 	{
 		for(int i=0; i<9; i++)
 		{
@@ -177,7 +177,7 @@ class Solution {
 public:
 	bool hasAnAnswerFound = false;
 	
-    void solveSudoku(vector<vector<char>>& board) {
+    void solveSudoku(vector<vector<char> >& board) {
         emptyCount = info.Setup_Board_Info(board);
       	if(Recursive(board, 0))
       		hasAnAnswerFound = true;
@@ -185,7 +185,7 @@ public:
       		hasAnAnswerFound = false;
     }
     
-    void ShowBoard(vector<vector<char>>& board)
+    void ShowBoard(vector<vector<char> >& board)
     {
     	for(int i=0; i<9; i++)
 		{
@@ -202,7 +202,7 @@ public:
 	}
     
     
-    bool Recursive(vector<vector<char>>& board, int count)
+    bool Recursive(vector<vector<char> >& board, int count)
     {
     	if(count >= emptyCount)
     		return true;
